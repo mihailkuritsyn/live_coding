@@ -1,4 +1,4 @@
-package main.java.leetcode.add_two_numbers;
+package leetcode.add_two_numbers;
 
 public class ListNode {
 
