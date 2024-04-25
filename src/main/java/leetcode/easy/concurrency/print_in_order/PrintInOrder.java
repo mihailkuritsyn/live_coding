@@ -1,4 +1,4 @@
-package main.java.leetcode.easy.concurrency.print_in_order;
+package leetcode.easy.concurrency.print_in_order;
 
 import java.util.List;
 import java.util.stream.Stream;
@@ -33,8 +33,12 @@ public class PrintInOrder {
       }
     });
 
-    List<Thread> workers = Stream.of(a, b, c).toList();
+    List<Thread> workers = Stream.of(a, c, b).toList();
     workers.forEach(Thread::start);
+
+    for (Thread thread : workers) {
+      thread.join();
+    }
   }
 
   public static class FooWorker1 implements Runnable {

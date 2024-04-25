@@ -2,9 +2,9 @@ package leetcode.easy.concurrency.print_in_order;
 
 import java.util.concurrent.Semaphore;
 
-public class Foo {
+public class FooSemaphore {
 
-  public Foo() {
+  public FooSemaphore() {
   }
 
   public void first() {
