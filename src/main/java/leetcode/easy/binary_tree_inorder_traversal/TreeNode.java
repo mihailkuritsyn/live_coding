@@ -1,4 +1,4 @@
-package main.java.leetcode.binary_tree_inorder_traversal;
+package leetcode.easy.binary_tree_inorder_traversal;
 
 public class TreeNode {
 

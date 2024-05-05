@@ -1,4 +1,4 @@
-package main.java.leetcode.binary_tree;
+package leetcode.binary_tree;
 
 public class ConvertSortedArrayToBinarySearchTree {
 
