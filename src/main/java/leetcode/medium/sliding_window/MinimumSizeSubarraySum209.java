@@ -1,4 +1,4 @@
-package leetcode.medium;
+package leetcode.medium.sliding_window;
 
 public class MinimumSizeSubarraySum209 {
 // Given an array of positive integers nums and a positive integer

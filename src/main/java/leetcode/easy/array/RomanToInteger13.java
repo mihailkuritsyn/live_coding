@@ -1,9 +1,9 @@
-package main.java.leetcode.roman_to_integer_13;
+package leetcode.easy.array;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class RomanToInteger {
+public class RomanToInteger13 {
 
   private static final char I = 'I';
   private static final char V = 'V';
@@ -49,7 +49,7 @@ public class RomanToInteger {
   }
 
   public static void main(String[] args) {
-    RomanToInteger rti = new RomanToInteger();
+    RomanToInteger13 rti = new RomanToInteger13();
 
     //  Input: s = "III"
     //  Output: 3

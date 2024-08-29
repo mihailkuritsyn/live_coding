@@ -1,4 +1,4 @@
-package leetcode.medium;
+package leetcode.medium.sliding_window;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
