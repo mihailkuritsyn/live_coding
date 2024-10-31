@@ -5,9 +5,9 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-public class ContainsDuplicateIITest {
+public class ContainsDuplicateII219Test {
 
-  private final ContainsDuplicateII cd = new ContainsDuplicateII();
+  private final ContainsDuplicateII219 cd = new ContainsDuplicateII219();
 
   @Test
   public void test1() {

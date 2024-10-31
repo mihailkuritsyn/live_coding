@@ -3,7 +3,7 @@ package leetcode.easy.hash;
 import java.util.HashSet;
 import java.util.Set;
 
-public class ContainsDuplicateII {
+public class ContainsDuplicateII219 {
 
 //  public boolean containsNearbyDuplicate(int[] nums, int k) {
 //    Map<Integer, Integer> indexMap = new HashMap<>();
