@@ -5,10 +5,10 @@ package leetcode.add_two_numbers;
  * ListNode(int val) { this.val = val; } ListNode(int val, ListNode next) { this.val = val;
  * this.next = next; } }
  */
-public class AddTwoNumbers {
+public class AddTwoNumbers2 {
 
   public static void main(String[] args) {
-    AddTwoNumbers obj = new AddTwoNumbers();
+    AddTwoNumbers2 obj = new AddTwoNumbers2();
 
     //    l1 = [2,4,3], l2 = [5,6,4]
 //    ListNode three = new ListNode(3);
