@@ -1,4 +1,4 @@
-package main.java.leetcode.max_points_on_a_line;
+package leetcode.hard.hash;
 
 public class MaxPointsOnALine {
 
