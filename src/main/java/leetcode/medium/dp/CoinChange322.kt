@@ -12,20 +12,20 @@ package leetcode.medium.dp
 class CoinChange322 {
 
     //------- bottom to top dp solution-----
-    fun coinChange(coins: IntArray, amount: Int): Int {
-        if (amount == 0) return 0
-        val dp = IntArray(amount + 1) { Int.MAX_VALUE }
-        dp[0] = 0
-        for (i in 1..amount) {
-            for (j in coins.indices) {
-                val rem = i - coins[j]
-                if (rem >= 0 && dp[rem] != Int.MAX_VALUE) {
-                    dp[i] = minOf(dp[i], 1 + dp[rem])
-                }
-            }
-        }
-        return if (dp[amount] == Int.MAX_VALUE) -1 else dp[amount]
-    }
+//    fun coinChange(coins: IntArray, amount: Int): Int {
+//        if (amount == 0) return 0
+//        val dp = IntArray(amount + 1) { Int.MAX_VALUE }
+//        dp[0] = 0
+//        for (i in 1..amount) {
+//            for (j in coins.indices) {
+//                val rem = i - coins[j]
+//                if (rem >= 0 && dp[rem] != Int.MAX_VALUE) {
+//                    dp[i] = minOf(dp[i], 1 + dp[rem])
+//                }
+//            }
+//        }
+//        return if (dp[amount] == Int.MAX_VALUE) -1 else dp[amount]
+//    }
 
     //------- top to bottom brute force solution-----
 //    private val memo = mutableMapOf<Int, Int>()
@@ -60,24 +60,24 @@ class CoinChange322 {
 //        return currMin
 //    }
 
-//    -----------greedy algo (fail)---------
-    //    fun coinChange(coins: IntArray, amount: Int): Int {
-//        if (amount == 0) return 0
-//        coins.sortDescending()
-//        for (i in coins.indices) {
-//            var rem = amount
-//            var currRes = 0
-//            var coinInd = i
-//            while (coinInd < coins.size) {
-//                val coinCount = rem / coins[coinInd]
-//                rem = rem % coins[coinInd]
-//                currRes += coinCount
-//                if (rem == 0) {
-//                    return currRes
-//                }
-//                coinInd++
-//            }
-//        }
-//        return -1
-//    }
+    //    -----------greedy algo (fail)---------
+    fun coinChange(coins: IntArray, amount: Int): Int {
+        if (amount == 0) return 0
+        coins.sortDescending()
+        for (i in coins.indices) {
+            var rem = amount
+            var currRes = 0
+            var coinInd = i
+            while (coinInd < coins.size) {
+                val coinCount = rem / coins[coinInd]
+                rem = rem % coins[coinInd]
+                currRes += coinCount
+                if (rem == 0) {
+                    return currRes
+                }
+                coinInd++
+            }
+        }
+        return -1
+    }
 }

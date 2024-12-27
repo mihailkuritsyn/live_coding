@@ -1,8 +1,7 @@
 package leetcode.medium.dp
 
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-
-import org.junit.jupiter.api.Assertions.*
 
 class CoinChange322Test {
 
@@ -46,5 +45,11 @@ class CoinChange322Test {
     fun test5() {
         val coins = intArrayOf(186, 419, 83, 408)
         assertEquals(20, target.coinChange(coins, 6249))
+    }
+
+    @Test
+    fun test6() {
+        val coins = intArrayOf(1, 3, 4, 5)
+        assertEquals(2, target.coinChange(coins, 7))
     }
 }
