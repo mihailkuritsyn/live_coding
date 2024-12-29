@@ -1,5 +1,7 @@
 package leetcode.medium.dp
 
+import kotlin.math.min
+
 //You are given an integer array coins representing coins of
 // different denominations and an integer amount representing a total amount of money.
 //
@@ -11,73 +13,18 @@ package leetcode.medium.dp
 
 class CoinChange322 {
 
-    //------- bottom to top dp solution-----
-//    fun coinChange(coins: IntArray, amount: Int): Int {
-//        if (amount == 0) return 0
-//        val dp = IntArray(amount + 1) { Int.MAX_VALUE }
-//        dp[0] = 0
-//        for (i in 1..amount) {
-//            for (j in coins.indices) {
-//                val rem = i - coins[j]
-//                if (rem >= 0 && dp[rem] != Int.MAX_VALUE) {
-//                    dp[i] = minOf(dp[i], 1 + dp[rem])
-//                }
-//            }
-//        }
-//        return if (dp[amount] == Int.MAX_VALUE) -1 else dp[amount]
-//    }
-
-    //------- top to bottom brute force solution-----
-//    private val memo = mutableMapOf<Int, Int>()
-//    var res = Int.MAX_VALUE
-//    lateinit var coins_: IntArray
-//
-//    fun coinChange(coins: IntArray, amount: Int): Int {
-//        if (amount == 0) return 0
-//        coins_ = coins
-//        res = change(amount)
-//        return if (res == Int.MAX_VALUE) -1 else res
-//    }
-//
-//    fun change(amount: Int): Int {
-//        if (amount < 0) {
-//            return Int.MAX_VALUE
-//        }
-//        if (amount == 0) {
-//            return 0
-//        }
-//        if (memo.containsKey(amount)) {
-//            return memo[amount]!!
-//        }
-//        var currMin = Int.MAX_VALUE
-//        for (i in coins_.indices) {
-//            val change = change(amount - coins_[i])
-//            if (change != Int.MAX_VALUE) {
-//                currMin = minOf(currMin, 1 + change)
-//            }
-//        }
-//        memo[amount] = currMin
-//        return currMin
-//    }
-
-    //    -----------greedy algo (fail)---------
     fun coinChange(coins: IntArray, amount: Int): Int {
         if (amount == 0) return 0
-        coins.sortDescending()
-        for (i in coins.indices) {
-            var rem = amount
-            var currRes = 0
-            var coinInd = i
-            while (coinInd < coins.size) {
-                val coinCount = rem / coins[coinInd]
-                rem = rem % coins[coinInd]
-                currRes += coinCount
-                if (rem == 0) {
-                    return currRes
+        val dp = IntArray(amount + 1) { 10001 }
+        dp[0] = 0
+        for (i in 1..amount) {
+            for (j in coins.indices) {
+                val rem = i - coins[j]
+                if (rem >= 0) {
+                    dp[i] = min(dp[i], 1 + dp[rem])
                 }
-                coinInd++
             }
         }
-        return -1
+        return if (dp[amount] == 10001) -1 else dp[amount]
     }
 }
