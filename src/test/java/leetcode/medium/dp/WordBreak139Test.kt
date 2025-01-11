@@ -9,6 +9,14 @@ class WordBreak139Test {
 
     @Test
     fun test1() {
+//        l
+//        le
+//        lee
+//        leet - true
+//        leetc
+//        leetco
+//        leetcod
+//        leetcode = leet
         assertTrue(target.wordBreak("leetcode", listOf("leet", "code")))
     }
 
@@ -19,6 +27,15 @@ class WordBreak139Test {
 
     @Test
     fun test3() {
+//        dp[0]=true
+//        0, 4, 3  - len set
+//        c   dp[1]=false
+//        ca  dp[2]=false
+//        cat - dp[3]=true
+//        cats - dp[4]=true
+//        catsa - 5-3=2 dp[2]=false 5-4=1 dp[1]=false
+//        catsan dp[]
+//        catsand - 7-3=4 dp[4]=true and contains  dp[7] =true
         val list = listOf("cats", "dog", "sand", "and", "cat")
         assertFalse(target.wordBreak("catsandog", list))
     }
@@ -26,13 +43,14 @@ class WordBreak139Test {
     @Test
     fun test4() {
         val list = listOf("a", "b", "bold")
-        assertFalse(target.wordBreak("bold", list))
+        assertTrue(target.wordBreak("bold", list))
     }
 
     @Test
     fun test5() {
-        //a
-        //ab
+        //a true
+        //ab true
+        //abc a+bc true
         val list = listOf("a", "ab", "bc")
         assertTrue(target.wordBreak("abc", list))
     }

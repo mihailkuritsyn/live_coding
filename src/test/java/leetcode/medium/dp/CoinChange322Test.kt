@@ -27,19 +27,20 @@ class CoinChange322Test {
 
     @Test
     fun test4() {
+        val coins = intArrayOf(1, 3, 4, 5)
+        assertEquals(2, target.coinChange(coins, 7))
+    }
+
+    @Test
+    fun test5() {
         val coins = intArrayOf(5, 3)
         assertEquals(4, target.coinChange(coins, 12))
     }
 
     @Test
-    fun test5() {
+    fun test6() {
         val coins = intArrayOf(186, 419, 83, 408)
         assertEquals(20, target.coinChange(coins, 6249))
     }
 
-    @Test
-    fun test6() {
-        val coins = intArrayOf(1, 3, 4, 5)
-        assertEquals(2, target.coinChange(coins, 7))
-    }
 }
