@@ -1,5 +1,6 @@
 package leetcode.medium.dp
 
+import leetcode.medium.dp.coin_change_322.CoinChange322
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 

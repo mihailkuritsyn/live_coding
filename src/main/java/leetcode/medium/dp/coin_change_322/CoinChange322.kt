@@ -1,4 +1,4 @@
-package leetcode.medium.dp
+package leetcode.medium.dp.coin_change_322
 
 import kotlin.math.min
 

@@ -1,6 +1,4 @@
-package leetcode.medium.dp
-
-import kotlin.math.min
+package leetcode.medium.dp.coin_change_322
 
 //You are given an integer array coins representing coins of
 // different denominations and an integer amount representing a total amount of money.
