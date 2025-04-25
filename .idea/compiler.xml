@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="live_coding" />
+        <module name="livecode" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
