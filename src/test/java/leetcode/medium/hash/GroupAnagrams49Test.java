@@ -1,4 +1,4 @@
-package leetcode.medium;
+package leetcode.medium.hash;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

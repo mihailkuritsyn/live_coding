@@ -8,7 +8,7 @@ package leetcode.easy.hash
 class RansomNote383 {
 
     fun canConstruct(ransomNote: String, magazine: String): Boolean {
-        var magArr = Array<Int>(26) { 0 }
+        val magArr = IntArray(26) { 0 }
         for (l in magazine) {
             magArr[l.code - 'a'.code]++
         }

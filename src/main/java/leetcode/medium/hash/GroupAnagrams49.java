@@ -1,4 +1,4 @@
-package leetcode.medium;
+package leetcode.medium.hash;
 
 import java.util.ArrayList;
 import java.util.Collections;
