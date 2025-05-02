@@ -15,9 +15,9 @@ public class Runnable1 implements Runnable {
   @Override
   public void run() {
     String threadName = Thread.currentThread().getName();
-    System.out.println(threadName + "Attempting to lock 1");
+    System.out.println(threadName + " Attempting to lock 1");
     lock1.lock();
-    System.out.println("Lock 1 locked");
+    System.out.println(threadName + " Lock 1 locked");
 
     try {
       Thread.sleep(3000);
@@ -25,13 +25,13 @@ public class Runnable1 implements Runnable {
       // ignore
     }
 
-    System.out.println(threadName + "Attempting to lock 2");
+    System.out.println(threadName + " Attempting to lock 2");
     lock2.lock();
-    System.out.println("Lock 2 locked");
+    System.out.println(threadName + " Lock 2 locked");
 
-    System.out.println(threadName + "Lock 1 unlocked");
+    System.out.println(threadName + " Lock 1 unlocked");
     lock1.unlock();
-    System.out.println(threadName + "Lock 2 unlocked");
+    System.out.println(threadName + " Lock 2 unlocked");
     lock2.unlock();
   }
 }

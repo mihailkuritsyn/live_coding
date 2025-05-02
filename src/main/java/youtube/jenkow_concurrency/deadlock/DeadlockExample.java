@@ -11,6 +11,7 @@ public class DeadlockExample {
 
     Runnable r1 = new Runnable1(lock1, lock2);
     Runnable r2 = new Runnable2(lock1, lock2);
+//    Runnable r2 = new Runnable2(lock2, lock1);
 
     Thread t1 = new Thread(r1);
     Thread t2 = new Thread(r2);
