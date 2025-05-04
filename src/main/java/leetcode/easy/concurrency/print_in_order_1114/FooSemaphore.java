@@ -1,6 +1,11 @@
-package leetcode.easy.concurrency.print_in_order;
+package leetcode.easy.concurrency.print_in_order_1114;
 
-public class FooVolatile {
+import java.util.concurrent.Semaphore;
+
+public class FooSemaphore {
+
+  public FooSemaphore() {
+  }
 
   public void first() {
     System.out.print("first");
@@ -14,32 +19,25 @@ public class FooVolatile {
     System.out.print("third");
   }
 
-  public FooVolatile() {
-  }
-
-  private volatile boolean waitFirst = true;
-  private volatile boolean waitSecond = true;
+  private final Semaphore waitFirst = new Semaphore(0);
+  private final Semaphore waitSecond = new Semaphore(0);
 
   public void first(Runnable printFirst) throws InterruptedException {
     // printFirst.run() outputs "first". Do not change or remove this line.
     printFirst.run();
-    waitFirst = false;
+    waitFirst.release();
   }
 
   public void second(Runnable printSecond) throws InterruptedException {
     // printSecond.run() outputs "second". Do not change or remove this line.
-    while (waitFirst) {
-      Thread.onSpinWait();
-    }
+    waitFirst.acquire();
     printSecond.run();
-    waitSecond = false;
+    waitSecond.release();
   }
 
   public void third(Runnable printThird) throws InterruptedException {
     // printThird.run() outputs "third". Do not change or remove this line.
-    while (waitSecond) {
-      Thread.onSpinWait();
-    }
+    waitSecond.acquire();
     printThird.run();
   }
 

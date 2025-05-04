@@ -1,4 +1,4 @@
-package leetcode.easy.concurrency.print_in_order;
+package leetcode.easy.concurrency.print_in_order_1114;
 
 public class FooWaitNotify {
 

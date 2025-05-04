@@ -1,10 +1,10 @@
-package leetcode.easy.concurrency.print_in_order;
+package leetcode.easy.concurrency.print_in_order_1114;
 
-import java.util.concurrent.Semaphore;
+import java.util.concurrent.CountDownLatch;
 
-public class FooSemaphore {
+public class FooCDLatch {
 
-  public FooSemaphore() {
+  public FooCDLatch() {
   }
 
   public void first() {
@@ -19,25 +19,25 @@ public class FooSemaphore {
     System.out.print("third");
   }
 
-  private final Semaphore waitFirst = new Semaphore(0);
-  private final Semaphore waitSecond = new Semaphore(0);
+  private final CountDownLatch waitFirst = new CountDownLatch(1);
+  private final CountDownLatch waitSecond = new CountDownLatch(1);
 
   public void first(Runnable printFirst) throws InterruptedException {
     // printFirst.run() outputs "first". Do not change or remove this line.
     printFirst.run();
-    waitFirst.release();
+    waitFirst.countDown();
   }
 
   public void second(Runnable printSecond) throws InterruptedException {
     // printSecond.run() outputs "second". Do not change or remove this line.
-    waitFirst.acquire();
+    waitFirst.await();
     printSecond.run();
-    waitSecond.release();
+    waitSecond.countDown();
   }
 
   public void third(Runnable printThird) throws InterruptedException {
     // printThird.run() outputs "third". Do not change or remove this line.
-    waitSecond.acquire();
+    waitSecond.await();
     printThird.run();
   }
 
